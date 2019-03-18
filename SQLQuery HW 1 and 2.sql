@@ -210,4 +210,46 @@ insert into ServiceSale values (3, 'Westbrook', 19.00, '2019-03-13', 3, 3);
 insert into ServiceSale values (4, 'Kobe', 49.00, '2019-03-15', 2, 4);
 insert into ServiceSale values (5, 'Jordan', 51.00, '2019-03-16', 1, 5);
 select * from ServiceSale;
+
+insert into ClassType values ('Cheater'), ('Goat'), ('Loser'), ('Winner'), ('Soft');
+select * from ClassType;
+
+insert into Class values (1, 900), (2, 800), (3, 700), (4, 800), (5, 600);
+select * from Class;
+
+insert into Guest values ('Kobe Bryant', 'GOAT of Basketball','1978-08-23',null,1),
+						  ('Magic Johnson', 'VP of Basketball', '1959-08-14', '2019-08-14', 2),
+						  ('Lebron James', 'King', '1985-12-30', '2019-12-31', 3),
+						  ('Michael Jordan', 'Billionare', '1963-02-17', '2019-02-27', 4),
+						  ('Kevin Durant', 'Slim', '1988-09-29', '2019-09-29', 5);
+						  select * from Guest;
+
+insert into GuestLinkClass values (1, 1), (2,3), (3,3), (4, 4), (5, 5);
+select * from GuestLinkClass;
+
+insert into GuestStatus values ( '5 star', 1),
+								('4 star',2),
+								('3 star',3),
+								('2 star',4),
+								('1 star', 5);
+select * from GuestStatus;
+
+insert into Room values (1), (2), (3), (4), (5);
+select * from Room;
+
+insert into RoomStatus values   ('Neat', 1),
+								('Tidy', 2),
+								('Spacious' ,3),
+								('Messy' ,4),
+								('Dirty' , 5);
+select * from RoomStatus;
+
+insert into RoomStay values  ( 1, 1, 1,'2019-03-18','2019-03-19', 100.00),
+							 ( 2, 3, 3,'2019-03-10','2019-03-19', 900.00),
+							 ( 3, 4, 2,'2019-03-11','2019-03-15', 400.00),
+							 ( 4, 4, 4,'2019-03-18','2019-03-20', 200.00),
+							 ( 5, 5, 5,'2019-03-16','2019-03-19', 300.00);
+								
+select * from RoomStay;
+
 --HOMEWORK 1 and 2
