@@ -253,3 +253,27 @@ insert into RoomStay values  ( 1, 1, 1,'2019-03-18','2019-03-19', 100.00),
 select * from RoomStay;
 
 --HOMEWORK 1 and 2
+--#3
+select name, birthday from Guest where YEAR(birthday) < 2000;
+select Room.id, tavernId, serviceSaleId, guestId, rate
+	from Room inner join RoomStay on Room.id = RoomStay.roomId where rate > 100.00;
+select distinct name from Guest;
+select * from Guest order by name asc;
+select top 10 * from ServiceSale order by price desc;
+select g.name, ct.name as [className], c.level,
+	(case when c.level <= 10 then '1-10' when c.level <= 20 then '11-20' when c.level <= 30 then '21-30' when c.level <= 40 then '31-40' when c.level <= 50 then '41-50'
+		when c.level <= 60 then '51-60' when c.level <= 70 then '61-70' when c.level <= 80 then '71-80' when c.level <= 90 then '81-90' else '91-99' end) as [grouping]
+	from Guest g inner join GuestLinkClass glc on (g.id = glc.guestId) inner join Class c on (glc.classId = c.id) inner join ClassType ct on (c.classTypeId = ct.id)
+
+drop table if exists SampleStatus;
+go
+create table SampleStatus (
+	id int identity primary key,
+	name varchar(50) not null,
+	holderId int not null,
+);
+insert into SampleStatus select name, roomId from RoomStatus;
+select * from SampleStatus;
+go
+
+--HW #4
